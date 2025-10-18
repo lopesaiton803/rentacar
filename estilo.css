@@ -1,0 +1,350 @@
+/* Ícones com leve animação e cor */
+  .animated-icon {
+    transition: transform 0.4s ease, color 0.4s ease;
+  }
+  .animated-icon:hover {
+    transform: scale(1.2);
+    color: #b30000;
+  }
+
+  /* Seção Missão e Visão */
+  .about-missao-visao .about-item {
+    width: 48%;
+  }
+  .about-missao-visao h4 {
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .about-missao-visao p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Imagem sobreposta */
+  .about-right {
+    position: relative;
+  }
+  .sobreposta-img {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 60%;
+    border-radius: 12px;
+    opacity: 0.7;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+  }
+  .sobreposta-img:hover {
+    transform: scale(1.05);
+  } 
+
+
+  /* services */
+
+
+  /* Overlay preto sobre a imagem */
+  .gauto-service-area .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+  }
+
+  .gauto-service-area .container {
+    position: relative;
+    z-index: 2;
+  }
+.gauto-service-area h3,
+  .gauto-service-area h2,
+  .gauto-service-area h4,
+  .gauto-service-area p {
+    color: #fff;
+  }
+
+  .single-service {
+    background: rgba(255, 255, 255, 0.05);
+
+    padding: 30px;
+    transition: all 0.4s ease;
+  }
+
+  .single-service:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+  }
+
+  .service-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff3333;
+    opacity: 0.6;
+  }
+
+  .service-icon img {
+    width: 80px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px #ff3333);
+  }
+
+  .service-text p{
+    font-weight: 200;
+  }
+
+  .single-service{
+    border: 1px solid #1F2E4E;
+  }
+
+  /* ethoz no terreno */
+
+  .offer-card {
+    transition: all 0.4s ease;
+    border-radius: 12px;
+  }
+
+  .offer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Wrapper da imagem */
+  .offer-img-wrapper {
+    position: relative;
+    height: 340px; /* altura maior para as imagens */
+    overflow: hidden;
+  }
+
+  .offer-img-wrapper img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  /* Zoom suave ao hover */
+  .offer-card:hover .offer-img-wrapper img {
+    transform: scale(1.08);
+  }
+
+  /* Preço */
+  .price-tag {
+    position: absolute;
+    bottom: -15px; /* invade a imagem */
+    left: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Conteúdo */
+  .offer-content {
+    border-top: 3px solid #d61c1c;
+  }
+
+  .offer-content ul li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+  }
+
+  .btn-danger {
+    background-color: #d61c1c;
+    border-color: #d61c1c;
+  }
+
+  .btn-danger:hover {
+    background-color: #b51414;
+  }
+
+
+  /* ethos no tereeno */
+
+
+     .gauto-testimonial{
+
+   }
+  .gauto-testimonial-area {
+         background-color: #000C21;
+  }
+
+  .site-heading h4 {
+    color: #d61c1c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .single-testimonial {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px 25px;
+    transition: all 0.4s ease;
+    min-height: 300px;
+  }
+
+  .single-testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .testimonial-text p {
+    font-style: italic;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .testimonial-meta {
+    display: flex;
+    align-items: center;
+  }
+
+  .client-image img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #d61c1c;
+    margin-right: 15px;
+  }
+
+  .client-info h3 {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .client-info p {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+  }
+
+
+  /* footer */
+
+
+
+   .footer-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .footer-service-icon i {
+    font-size: 26px;
+    background: rgba(214, 28, 28, 0.1);
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #d61c1c;
+    transition: all 0.3s ease;
+  }
+
+  .footer-service-item:hover .footer-service-icon i {
+    background: #ffffff;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  .footer-service-text h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .footer-service-text a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-service-text a:hover {
+    color: #ffffff;
+  }
+
+  .footer-service-text p {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 4px 0 0 0;
+  }
+
+
+  /* ccc */
+
+
+  /* Faz a seção invadir o slide acima */
+.gauto-find-area {
+  margin-top: -140px; /* ajusta conforme o tamanho do slider */
+  position: relative;
+  z-index: 10;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .gauto-find-area {
+    margin-top: -60px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+#gauto_navigation li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+#gauto_navigation li a i {
+  color: #d32f2f; /* vermelho Ethos */
+  transition: transform 0.3s ease;
+}
+
+#gauto_navigation li a:hover i {
+  transform: scale(1.2);
+  color: #b71c1c;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transição suave entre idiomas */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+body.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+
+.header-promo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* ajusta o valor conforme o espaçamento desejado */
+  align-items: center;
+}
