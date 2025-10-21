@@ -116,7 +116,7 @@
             <div class="col-md-3">
                <div class="site-logo">
                   <a href="index.html">
-                     <img src="imgs/Ethos Transporte Logo.png" alt="gauto" style="max-width: 170px;" />
+                     <img src="imgs/Ethos Transporte Logo.png" alt="gauto" style="max-width: 270px;" />
                   </a>
                </div>
             </div>
@@ -253,147 +253,233 @@
    <!-- Área de Pesquisa de Carros -->
    <!-- Área de Pesquisa de Carros -->
    <section class="gauto-find-area section_70">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="find-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="find-box">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="find-text">
+                <h3 data-translate="findCar">Continuar Reserva de Carro</h3>
+                <p style="color: white;" data-translate="findDesc">
+                  Encontre e reserve o carro ideal com a Ethos Transportes.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="find-form">
+                <form id="reservaForm">
                   <div class="row">
-                     <div class="col-md-4">
-                        <div class="find-text">
-                           <h3 data-translate="findCar">Continuar Reserva de Carro</h3>
-                           <p style="color: white;" data-translate="findDesc">Encontre e reserve o carro ideal com a Ethos Transportes.</p>
-                        </div>
-                     </div>
-                     <div class="col-md-8">
-                        <div class="find-form">
-                           <form>
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <p>
-                                       <select>
-                                          <option data-display="Tipo de Viatura" data-translate="carType">Selecione o Tipo de Carro</option>
-                                          <option value="1">VW Golf VII</option>
-                                          <option value="2">Audi A1 S-Line</option>
-                                          <option value="3">Toyota Camry</option>
-                                          <option value="4">BMW 320 ModernLine</option>
-                                       </select>
-                                    </p>
-                                 </div>
+                    <!-- Tipo de viatura -->
+    <div class="col-md-4">
+  <p>
+    <select id="tipoCarro" size="14" required>
+      <option selected disabled>Selecione a Viatura</option>
 
-                                 <div class="col-md-4">
-                                    <p>
-                                       <input type="text" placeholder="Local de Recolha (Cidade ou Aeroporto)" data-translate-placeholder="pickupPlaceholder" />
-                                    </p>
-                                 </div>
+      <optgroup label="🚙 Toyota (4x4)">
+        <option value="landcruiser">Land Cruiser</option>
+        <option value="fortuner">Fortuner</option>
+        <option value="revo">Revo</option>
+        <option value="d4d">D4D</option>
+      </optgroup>
 
-                                 <div class="col-md-4">
-                                    <p>
-                                       <input type="text" placeholder="Local de Entrega (Cidade ou Aeroporto)" data-translate-placeholder="dropoffPlaceholder" />
-                                    </p>
-                                    <small class="text-danger" data-translate="differentLocation">Precisa de um local de entrega diferente?</small>
-                                 </div>
-                              </div>
+      <optgroup label="🚗 Ford / Outros">
+        <option value="fordranger">Ford Ranger</option>
+        <option value="isuzu">Isuzu</option>
+        <option value="peugeot">Peugeot</option>
+      </optgroup>
 
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <p>
-                                       <input id="reservation_date" name="reservation_date"
-                                          placeholder="Data de Recolha" data-translate-placeholder="pickupDate" data-select="datepicker" type="text" />
-                                    </p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <p>
-                                       <input id="return_date" name="return_date" placeholder="Data de Entrega"
-                                          data-translate-placeholder="returnDate" data-select="datepicker" type="text" />
-                                    </p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <p>
-                                       <button type="submit" class="gauto-theme-btn" data-translate="reserveNow">
+      <optgroup label="🚘 Turismo">
+        <option value="markx">Mark X</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+        <option value="bmw">BMW</option>
+      </optgroup>
+
+      <optgroup label="🚌 Transporte Coletivo">
+        <option value="minibus15">Minibus 15 Lugares</option>
+        <option value="minibus30">Minibus 30 Lugares</option>
+        <option value="camionetas">Camionetas</option>
+        <option value="camiao">Camião Contentor</option>
+      </optgroup>
+    </select>
+  </p>
+</div>
+
+                    <!-- Local de recolha -->
+                    <div class="col-md-4">
+                      <p>
+                        <input type="text" placeholder="Local de Recolha (Cidade ou Aeroporto)" required />
+                      </p>
+                    </div>
+
+                    <!-- Local de entrega -->
+                    <div class="col-md-4">
+                      <p>
+                        <input type="text" placeholder="Local de Entrega (Cidade ou Aeroporto)" required />
+                      </p>
+                      <small class="text-danger">Precisa de um local de entrega diferente?</small>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <!-- Data de recolha -->
+                    <div class="col-md-4">
+                      <p>
+                        <input id="reservation_date" name="reservation_date" placeholder="Data de Recolha"
+                          data-select="datepicker" type="date" required />
+                      </p>
+                    </div>
+
+                    <!-- Data de entrega -->
+                    <div class="col-md-4">
+                      <p>
+                        <input id="return_date" name="return_date" placeholder="Data de Entrega"
+                          data-select="datepicker" type="date" required />
+                      </p>
+                    </div>
+
+                    <!-- Botão de reserva -->
+                    <div class="col-md-4">
+                      <p>
+                        <button type="submit" id="reservaBtn" class="gauto-theme-btn">
+                          Reservar Agora
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div> <!-- find-box -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script de mudança de cor do botão -->
+<script>
+  const form = document.getElementById("reservaForm");
+  const botao = document.getElementById("reservaBtn");
+
+  // Cores de estado
+  const estados = {
+    inProcess: "#ffc107", // amarelo
+    completed: "#28a745", // verde
+    pending: "#dc3545" // vermelho
+  };
+
+  // Simulação do ciclo de status ao clicar
+  let status = "pending";
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (status === "pending") {
+      botao.style.backgroundColor = estados.inProcess;
+      botao.textContent = "Reserva em Processo...";
+      status = "inProcess";
+    } else if (status === "inProcess") {
+      botao.style.backgroundColor = estados.completed;
+      botao.textContent = "Reserva Finalizada ✅";
+      status = "completed";
+    } else {
+      botao.style.backgroundColor = estados.pending;
+      botao.textContent = "Reservar Agora";
+      status = "pending";
+    }
+  });
+</script>
+
+
+
+<!-- Sobre Nós - Ethos Transportes -->
+<section id="about" class="py-5 py-xl-8 ethos-about">
+  <div class="container">
+    <!-- Cabeçalho -->
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center">
+         <img src="imgs/Ethos Transporte Logo.png" style="max-width: 260px;" alt="">
+        <h2 class="mb-4 display-5 fw-bold text-danger">Sobre a Ethos Transportes</h2>
+        <p class="text-secondary mb-5 lead fs-5">
+          A <strong>Ethos Transportes</strong> é uma empresa moçambicana especializada em
+          <strong>aluguer de viaturas</strong>, dedicada a oferecer soluções de mobilidade seguras,
+          modernas e personalizadas para particulares, empresas e turistas em todo o país.
+        </p>
+       <hr class="w-50 mx-auto mb-5 border-0" 
+    style="height: 1px; 
+           background: linear-gradient(to right, #ff0000, #ffffff, #ff0000); 
+           border-radius: 20px;" />
+
+      </div>
+    </div>
+
+    <!-- Corpo -->
+    <div class="row gy-4 align-items-lg-center">
+      <!-- Imagem -->
+      <div class="col-12 col-lg-6 position-relative ethos-image-wrapper">
+        <img
+          class="img-fluid rounded border border-1 border-danger shadow-sm ethos-img primary-img"
+          src="imgs/4 gajso com carro.png"
+          alt="Equipa Ethos Transportes"
+        />
+        <img
+          class="img-fluid rounded border border-1 border-danger shadow-sm ethos-img secondary-img"
+          src="imgs/foto chaves.png"
+          alt="Entrega de chaves Ethos"
+        />
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-11">
+          <p class="lead mb-4 mb-md-5 text-muted">
+            Acreditamos que cada viagem começa com conforto e confiança. Com uma
+            <strong>frota moderna e diversificada</strong>, garantimos excelência, segurança e
+            profissionalismo em cada quilómetro percorrido.  
+            Mais do que uma empresa de aluguer, somos o seu parceiro de mobilidade.
+          </p>
+
+<div class="row gy-4 mb-5">
+  <div class="col-12 col-md-6">
+    <div class="card h-100 text-center"
+         style="border: 1px solid; border-image: linear-gradient(45deg, #ffffff, #ff0000) 1; border-radius: 10px;">
+      <div class="card-body p-4">
+        <i class="fas fa-bullseye fa-2x text-danger mb-3"></i>
+        <h5 class="fw-bold mb-2">Nossa Missão</h5>
+        <p class="mb-0 text-secondary fs-6">
+          Ser uma referência nacional no setor de aluguer de viaturas, reconhecida pela inovação,
+          excelência no atendimento e compromisso com a experiência do cliente.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <div class="card h-100 text-center"
+         style="border: 1px solid; border-image: linear-gradient(45deg, #ffffff, #ff0000) 1; border-radius: 10px;">
+      <div class="card-body p-4">
+        <i class="fas fa-eye fa-2x text-danger mb-3"></i>
+        <h5 class="fw-bold mb-2">Nossa Visão</h5>
+        <p class="mb-0 text-secondary fs-6">
+          Oferecer soluções de mobilidade seguras, confortáveis e acessíveis, garantindo a satisfação dos nossos clientes através de um serviço eficiente, transparente e de qualidade.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Botão -->
+           <button type="submit" style="max-width: 200px;" class="gauto-theme-btn mx-auto" data-translate="reserveNow">
                                           Reservar Agora
                                        </button>
-                                    </p>
-                                 </div>
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div> <!-- find-box -->
-            </div>
-         </div>
+        </div>
       </div>
-   </section>
-
-
-
-
-   <!-- About Area Start -->
-   <section id="about" class="gauto-about-area section_70">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-6">
-               <div class="about-left">
-                  <h4 data-translate="aboutUs">Sobre Nós</h4>
-                  <h2 data-translate="welcomeTitle">Bem-vindo a Ethos Transporte Serviços</h2>
-                  <p data-translate="aboutText">
-                     Na Ethos Transportes, acreditamos que cada viagem começa com conforto,
-                     confiança e mobilidade. Somos uma empresa especializada em aluguer de viaturas,
-                     dedicada a oferecer soluções de transporte personalizadas para particulares,
-                     empresas e turistas que valorizam qualidade e segurança. Com uma frota moderna e
-                     diversificada — desde carros compactos ideais para o dia-a-dia, até SUVs e viaturas
-                     executivas — garantimos que cada cliente encontra o veículo perfeito para as suas
-                     necessidades. O nosso compromisso vai além do simples aluguer: oferecemos um serviço
-                     de excelência, com disponibilidade total, profissionalismo e atenção ao detalhe em cada
-                     etapa do processo. Seja para uma viagem de negócios, férias em família ou um evento
-                     especial, estamos aqui para garantir que chegue ao seu destino com tranquilidade e estilo.
-                  </p>
-
-                  <!-- Missão e Visão (substitui o about-list) -->
-                  <div class="about-missao-visao d-flex justify-content-between mt-4">
-                     <div class="about-item text-center">
-                        <i class="fas fa-bullseye fa-3x text-danger animated-icon"></i>
-                        <h4 class="mt-2" data-translate="mission">Nossa Missão</h4>
-                        <p data-translate="missionText">Ser uma referência nacional no setor de aluguer de viaturas, reconhecida pela inovação,
-                           excelência no atendimento e compromisso com a experiência do cliente.</p>
-                     </div>
-                     <div class="about-item text-center">
-                        <i class="fas fa-eye fa-3x text-danger animated-icon"></i>
-                        <h4 class="mt-2" data-translate="vision">Nossa Visão</h4>
-                        <p data-translate="visionText">Oferecer soluções de mobilidade seguras, confortáveis e acessíveis, garantindo a satisfação
-                           dos nossos clientes através de um serviço eficiente, transparente e de qualidade.</p>
-                     </div>
-                  </div>
-
-                  <!-- Ícones versão 5 -->
-
-
-
-
-
-
-                  <div class="about-signature mt-4">
-                     <div class="signature-left">
-                        <img src="imgs/fundador.png" class="rounded-circle" alt="Fundador da Ethos" />
-                     </div>
-                     <div class="signature-right">
-                        <h3>Gregorio Junior</h3>
-                        <p data-translate="founder">Fundador</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Lado direito com imagem sobreposta -->
-            <div class="col-lg-6">
-               <div class="about-right position-relative">
-                  <img src="imgs/4 gajso com carro.png" alt="carro de fundo" class="img-fluid" />
-                  <img src="imgs/foto chaves.png" alt="Equipe Ethos" class="sobreposta-img" />
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
+    </div>
+  </div>
+</section>
 
 
    <!-- About Area End -->
@@ -526,79 +612,105 @@
             </div>
          </div>
 
-         <div class="row g-4">
-            <!-- Nissan 370Z -->
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-               <div class="offer-card shadow-lg rounded overflow-hidden position-relative">
-                  <div class="offer-img-wrapper position-relative overflow-hidden">
-                     <img src="imgs/fortuner.jpeg" class="img-fluid w-100" alt="Nissan 370Z" />
-                     <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
-                        4.800 MT / <span data-translate="day">dia</span>
-                     </div>
-                  </div>
-                  <div class="offer-content bg-white p-4 rounded-bottom">
-                     <h4 class="fw-bold text-dark mb-3">fortuner</h4>
-                     <ul class="list-unstyled small text-muted mb-4">
-                        <li><i class="fa fa-calendar text-danger me-2"></i> <span data-translate="model">Modelo</span>: 2017</li>
-                        <li><i class="fa fa-cogs text-danger me-2"></i> <span data-translate="automatic">Automático</span></li>
-                        <li><i class="fa fa-tachometer text-danger me-2"></i> <span data-translate="consumption">Consumo</span>: 20 km/l</li>
-                     </ul>
-                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="btn btn-danger btn-sm rounded-pill px-3" data-translate="rentNow">Alugar Agora</a>
-                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3" data-translate="details">Detalhes</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
+ <div class="row gx-3 gy-4 justify-content-center">
+  <!-- Card 1 -->
+  <div class="col-12 col-sm-6 col-lg-3">
+    <div class="offer-card shadow-lg rounded overflow-hidden position-relative h-100">
+      <div class="offer-img-wrapper position-relative overflow-hidden">
+        <img src="imgs/fortuner.jpeg" class="img-fluid w-100" alt="Fortuner" />
+        <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
+          4.800 MT / <span data-translate="day">dia</span>
+        </div>
+      </div>
+      <div class="offer-content bg-white p-4 rounded-bottom">
+        <h4 class="fw-bold text-dark mb-3">Fortuner</h4>
+        <ul class="list-unstyled small text-muted mb-4">
+          <li><i class="fa fa-calendar text-danger me-2"></i> Modelo: 2017</li>
+          <li><i class="fa fa-cogs text-danger me-2"></i> Automático</li>
+          <li><i class="fa fa-tachometer text-danger me-2"></i> Consumo: 20 km/l</li>
+        </ul>
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="#" class="btn btn-danger btn-sm rounded-pill px-3">Alugar Agora</a>
+          <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            <!-- Toyota Camry -->
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-               <div class="offer-card shadow-lg rounded overflow-hidden position-relative">
-                  <div class="offer-img-wrapper position-relative overflow-hidden">
-                     <img src="imgs/bt-50sujo.jpeg" class="img-fluid w-100" alt="Toyota Camry" />
-                     <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
-                        3.500 MT / <span data-translate="day">dia</span>
-                     </div>
-                  </div>
-                  <div class="offer-content bg-white p-4 rounded-bottom">
-                     <h4 class="fw-bold text-dark mb-3">Bt-50</h4>
-                     <ul class="list-unstyled small text-muted mb-4">
-                        <li><i class="fa fa-calendar text-danger me-2"></i> <span data-translate="model">Modelo</span>: 2017</li>
-                        <li><i class="fa fa-cogs text-danger me-2"></i> <span data-translate="automatic">Automático</span></li>
-                        <li><i class="fa fa-tachometer text-danger me-2"></i> <span data-translate="consumption">Consumo</span>: 20 km/l</li>
-                     </ul>
-                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="btn btn-danger btn-sm rounded-pill px-3" data-translate="rentNow">Alugar Agora</a>
-                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3" data-translate="details">Detalhes</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
+  <!-- Card 2 -->
+  <div class="col-12 col-sm-6 col-lg-3">
+    <div class="offer-card shadow-lg rounded overflow-hidden position-relative h-100">
+      <div class="offer-img-wrapper position-relative overflow-hidden">
+        <img src="imgs/bt-50sujo.jpeg" class="img-fluid w-100" alt="BT-50" />
+        <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
+          3.500 MT / <span data-translate="day">dia</span>
+        </div>
+      </div>
+      <div class="offer-content bg-white p-4 rounded-bottom">
+        <h4 class="fw-bold text-dark mb-3">BT-50</h4>
+        <ul class="list-unstyled small text-muted mb-4">
+          <li><i class="fa fa-calendar text-danger me-2"></i> Modelo: 2017</li>
+          <li><i class="fa fa-cogs text-danger me-2"></i> Automático</li>
+          <li><i class="fa fa-tachometer text-danger me-2"></i> Consumo: 20 km/l</li>
+        </ul>
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="#" class="btn btn-danger btn-sm rounded-pill px-3">Alugar Agora</a>
+          <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            <!-- BMW X3 -->
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-               <div class="offer-card shadow-lg rounded overflow-hidden position-relative">
-                  <div class="offer-img-wrapper position-relative overflow-hidden">
-                     <img src="imgs/fordranger.jpeg" class="img-fluid w-100" alt="BMW X3" />
-                     <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
-                        4.200 MT / <span data-translate="day">dia</span>
-                     </div>
-                  </div>
-                  <div class="offer-content bg-white p-4 rounded-bottom">
-                     <h4 class="fw-bold text-dark mb-3">Ford-ranger</h4>
-                     <ul class="list-unstyled small text-muted mb-4">
-                        <li><i class="fa fa-calendar text-danger me-2"></i> <span data-translate="model">Modelo</span>: 2017</li>
-                        <li><i class="fa fa-cogs text-danger me-2"></i> <span data-translate="automatic">Automático</span></li>
-                        <li><i class="fa fa-tachometer text-danger me-2"></i> <span data-translate="consumption">Consumo</span>: 20 km/l</li>
-                     </ul>
-                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="btn btn-danger btn-sm rounded-pill px-3" data-translate="rentNow">Alugar Agora</a>
-                        <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3" data-translate="details">Detalhes</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+  <!-- Card 3 -->
+  <div class="col-12 col-sm-6 col-lg-3">
+    <div class="offer-card shadow-lg rounded overflow-hidden position-relative h-100">
+      <div class="offer-img-wrapper position-relative overflow-hidden">
+        <img src="imgs/minibus.webp" class="img-fluid w-100" alt="Minibus 4 Portas" />
+        <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
+          3.900 MT / <span data-translate="day">dia</span>
+        </div>
+      </div>
+      <div class="offer-content bg-white p-4 rounded-bottom">
+        <h4 class="fw-bold text-dark mb-3">Mini Bus 4 Portas</h4>
+        <ul class="list-unstyled small text-muted mb-4">
+          <li><i class="fa fa-calendar text-danger me-2"></i> Ano: 2021</li>
+          <li><i class="fa fa-users text-danger me-2"></i> Capacidade: 15 lugares</li>
+          <li><i class="fa fa-cogs text-danger me-2"></i> Automático</li>
+        </ul>
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="#" class="btn btn-danger btn-sm rounded-pill px-3">Alugar Agora</a>
+          <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="col-12 col-sm-6 col-lg-3">
+    <div class="offer-card shadow-lg rounded overflow-hidden position-relative h-100">
+      <div class="offer-img-wrapper position-relative overflow-hidden">
+        <img src="imgs/fordranger.jpeg" class="img-fluid w-100" alt="Ford Ranger" />
+        <div class="price-tag bg-danger text-white px-4 py-2 fw-bold shadow">
+          4.200 MT / <span data-translate="day">dia</span>
+        </div>
+      </div>
+      <div class="offer-content bg-white p-4 rounded-bottom">
+        <h4 class="fw-bold text-dark mb-3">Ford Ranger</h4>
+        <ul class="list-unstyled small text-muted mb-4">
+          <li><i class="fa fa-calendar text-danger me-2"></i> Modelo: 2017</li>
+          <li><i class="fa fa-cogs text-danger me-2"></i> Automático</li>
+          <li><i class="fa fa-tachometer text-danger me-2"></i> Consumo: 20 km/l</li>
+        </ul>
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="#" class="btn btn-danger btn-sm rounded-pill px-3">Alugar Agora</a>
+          <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
       </div>
    </section>
    <!-- Ofertas Ethos Fim -->

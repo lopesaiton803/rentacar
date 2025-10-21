@@ -1141,7 +1141,7 @@ button.gauto-theme-btn:hover {
 }
 
 .slide-item-1 {
-	background: url(../img/slider-1.jpg);
+	background: url(/imgs/IMG-20251020-WA0360.jpg)
 }
 
 .slide-item-2 {
@@ -1246,6 +1246,111 @@ button.gauto-theme-btn:hover {
 	top: 45%;
 }
 
+
+
+/* ===== ETHOS ABOUT - IMAGEM COM TRANSIÇÃO ===== */
+.ethos-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.ethos-img {
+  width: 100%;
+  height: 430px;
+  transition: opacity 1s ease-in-out, transform 1s ease, top 0.6s ease;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Imagem secundária — sobe e fica acima da principal */
+.ethos-img.secondary-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2; /* 🔥 garante que aparece acima da primeira */
+    height: 430px;
+}
+
+/* Quando passa o mouse */
+.ethos-image-wrapper:hover .primary-img {
+  opacity: 0;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.ethos-image-wrapper:hover .secondary-img {
+  opacity: 1;
+ 
+
+    height: 430px;
+}
+
+
+.border-gradient {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #d90429, #f87171, #9b5de5) border-box;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.border-gradient:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #9b5de5, #ff004d, #ff8c00) border-box;
+}
+
+/* ===== CARDS ===== */
+.ethos-about .card {
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.ethos-about .card:hover {
+  transform: translateY(-6px);
+ 
+}
+
+
+/* Ajustes sutis para os cards de Missão e Visão */
+#about .row.gy-4.mb-5 {
+  row-gap: 0.2rem !important; /* reduz o espaçamento vertical */
+}
+
+
+#about .row.gy-4.mb-5 .card {
+  width: 100%;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito suave ao passar o mouse */
+#about .row.gy-4.mb-5 .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* ===== BOTÃO ===== */
+.ethos-about .btn {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.ethos-about .btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+.ethos-about .card-body h5{
+	color: #001238;
+}
 
 /*================================================
 11 - FIND AREA CSS
