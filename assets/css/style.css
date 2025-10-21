@@ -1088,9 +1088,20 @@ button.gauto-theme-btn:hover {
 	font-size: 16px
 }
 
+
+.bt50-img {
+  transition: transform 0.6s ease;
+}
+
+.bt50-img:hover {
+  transform: scale(1.08) translateY(8%);
+}
+
+
 .cart-btn {
 	text-align: center;
 	background: #020202 none repeat scroll 0 0;
+	color: white;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
@@ -1109,19 +1120,7 @@ button.gauto-theme-btn:hover {
 	font-size: 14px;
 }
 
-.cart-btn:after {
-	position: absolute;
-	content: "";
-	width: 66%;
-	height: 100%;
-	background: #ec3323 none repeat scroll 0 0;
-	right: -36px;
-	z-index: -1;
-	-webkit-transform: skewX(40deg);
-	transform: skewX(40deg);
-	-webkit-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s
-}
+
 
 .cart-btn:hover {
 	background: #ec3323 none repeat scroll 0 0;
@@ -1131,6 +1130,28 @@ button.gauto-theme-btn:hover {
 	background: #020202 none repeat scroll 0 0;
 }
 
+.offer-img-wrapper img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.offer-img-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.offer-img-wrapper {
+  height: 230px; /* Altura consistente e centralizada */
+}
+
+.price-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
 
 /*================================================
 10 - MAIN SLIDER CSS
@@ -1206,31 +1227,29 @@ button.gauto-theme-btn:hover {
 
 .gauto-slide .owl-nav>.owl-prev {
 	visibility: hidden;
-	-webkit-transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
-	transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
+
 	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	
 }
 
 .gauto-slide:hover .owl-nav>.owl-prev {
 	visibility: visible;
 	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	
 	left: 30px
 }
 
 .gauto-slide .owl-nav>.owl-next {
 	visibility: hidden;
-	-webkit-transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
-	transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
+	
 	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	
 }
 
 .gauto-slide:hover .owl-nav>.owl-next {
 	visibility: visible;
 	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	
 	right: 30px
 }
 
@@ -1245,6 +1264,130 @@ button.gauto-theme-btn:hover {
 	position: absolute;
 	top: 45%;
 }
+
+
+/* --- FIX: remover imagem quebrada do Owl Carousel --- */
+.gauto-slide .owl-nav button.owl-prev span,
+.gauto-slide .owl-nav button.owl-next span {
+  display: none !important; /* Esconde o span com imagem padrão */
+}
+
+.gauto-slide .owl-nav button.owl-prev,
+.gauto-slide .owl-nav button.owl-next {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: auto;
+  height: auto;
+  background-image: none !important; /* 🔥 remove a imagem quebrada */
+}
+/* --- FIX DEFINITIVO: Remove ícone quebrado do Owl Carousel --- */
+.gauto-slide .owl-nav button.owl-prev span,
+.gauto-slide .owl-nav button.owl-next span {
+  display: none !important; /* Esconde o <span> que contém a imagem quebrada */
+}
+
+.gauto-slide .owl-nav button.owl-prev,
+.gauto-slide .owl-nav button.owl-next {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  background-image: none !important; /* 🔥 Remove imagem padrão do Owl */
+  color: white; /* mantém o ícone Font Awesome */
+}
+
+
+/* --- FIX: remover imagem quebrada (owl.video.play.png) --- */
+.owl-carousel .owl-video-play-icon {
+  background: none !important;
+  display: none !important;
+}
+
+/* =============================
+   FIX DEFINITIVO: Remove imagem quebrada do Owl Carousel
+   ============================= */
+.gauto-slide .owl-nav button.owl-prev span,
+.gauto-slide .owl-nav button.owl-next span {
+  display: none !important; /* esconde o span com a imagem nav.png */
+}
+
+.gauto-slide .owl-nav button.owl-prev,
+.gauto-slide .owl-nav button.owl-next {
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  color: #fff;
+  font-size: 36px;
+  transition: color 0.3s ease;
+}
+
+.gauto-slide .owl-prev::before,
+.gauto-slide .owl-next::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 36px;
+  color: #fff;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.gauto-slide .owl-prev::before { content: "\f104"; } /* ← */
+.gauto-slide .owl-next::before { content: "\f105"; } /* → */
+
+.gauto-slide .owl-prev:hover::before,
+.gauto-slide .owl-next:hover::before {
+  color: #ff0000; /* hover vermelho Ethos */
+}
+
+.gauto-slide .owl-prev,
+.gauto-slide .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.gauto-slide .owl-prev { left: 25px; }
+.gauto-slide .owl-next { right: 25px; }
+
+.gauto-slide:hover .owl-prev,
+.gauto-slide:hover .owl-next {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.gauto-slide .owl-prev::before,
+.gauto-slide .owl-next::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: white;
+  font-size: 28px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.gauto-slide .owl-prev::before {
+  content: "\f104"; /* ícone FA seta esquerda */
+}
+
+.gauto-slide .owl-next::before {
+  content: "\f105"; /* ícone FA seta direita */
+}
+
+.gauto-slide .owl-prev:hover::before,
+.gauto-slide .owl-next:hover::before {
+  color: #dc3545; /* vermelho Ethos ao hover */
+}
+
 
 
 
