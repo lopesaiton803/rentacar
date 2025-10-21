@@ -47,7 +47,7 @@ JS INDEX
 			autoplaySpeed: 5000,
 			autoplay: true,
 			loop: true,
-navText: ["<span class='owl-prev-icon'>&lt;</span>", "<span class='owl-next-icon'>&gt;</span>"],
+			navText: ["<img src='assets/img/prev-1.png'>", "<img src='assets/img/logo.png'>"],
 			mouseDrag: true,
 			touchDrag: true,
 			responsive: {
